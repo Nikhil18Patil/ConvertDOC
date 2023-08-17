@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  {%load static %}
+<head>
+    <title> convert your document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script  src="{%static 'js/index.js' %}" ></script>
+</head>
+<body>
+<div class="nav-sec" >
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Nikhil Patil </a>
+        </div>
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+          </div>
+        <ul class="menu">
+      <a href="#home">Home </a>
+      <a href="#about">About </a>
+      <a href="#projects">Other project </a>
+      <a href="#contact">Contact </a>
+      </ul>
+     </nav>
+
+</div>
+
+
+
+
+
+
+
+
+<hr style="background:linear-gradient(to right, #a685f2 0%, #da96d1 50%, #9672ea 100%);
+">
+
+
+
+<!--this is your home section code -->
+
+<div class="home" id="home">
+
+  <div class="home-sec">
+    
+    <div class="homelogo">
+      
+      <div class="hlogo">
+        <h1>ConvertDOC</h1>
+        <p>Convert your documents to PDF with ease, security, and customization.</p>
+      </div> 
+
+      
+    </div>
+
+      
+   <div class="homebt">
+      
+     
+      
+        <form method="post" enctype="multipart/form-data" class="form1">
+          {% csrf_token %}
+           <div> {{ form.as_p }}  </div>
+          <button type="submit" class="submit">Convert to PDF</button>
+        </form>
+      
+  </div>
+    
+ </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr style="background:linear-gradient(to right, #a685f2 0%, #da96d1 50%, #9672ea 100%);
+">
+
+
+
+
+<div  class="about-sec">
+
+<div class="about" id="about">
+   <div class="aboutsec">
+    <h1>About Us</h1>
+    <p> Welcome to <b> CONVERTDOC </b>, your one-stop shop for converting documents to PDF format. We offer a simple, easy-to-use interface that allows you to convert any document, regardless of its format, into a high-quality PDF file.
+
+      Our service is free to use, and we offer a variety of features to make your conversion experience as smooth as possible. You can upload your documents directly from your computer, or you can enter the URL of a web page that you want to convert. We also offer a variety of settings that allow you to customize your PDF file, such as the page size, margins, and font size.
+      
+      Once you have converted your document, you can download it to your computer or save it to the cloud. You can also share your PDF file with others by email, or by uploading it to a file-sharing service.</p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="projects" id="projects">
+
+</div>
+
+
+<hr style="background:linear-gradient(to right, #a685f2 0%, #da96d1 50%, #9672ea 100%);
+">
+<!-- this is contact sections -->
+
+<div class="contact" id="contact">
+
+  <div class="form">
+    <h1> Contact me </h1>
+    <form action="#home" method="">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Your name">
+        </div>
+        <div class="col-md-6">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Your email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" class="form-control" rows="5" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+
+  </div>
+  
+
+</div>
+
+
+<hr style="background:linear-gradient(to right, #a685f2 0%, #da96d1 50%, #9672ea 100%);
+">
+<!--this is footer section-->
+<div class="footer">
+  {%load static %}
+  <div class="footer_sec">
+      <div class="footer_about">
+          <h2> Nikhil Patil</h2>
+          <p>A full-stack web developer who builds beautiful,<br> user-friendly interfaces and robust, scalable back-ends <br>that lead to the success of the overall product.</p>
+      </div>
+
+    <div class="footer_social">
+       <div class="footer_h2"><h2 > Socail </h2></div>
+      <div class="footlinks">
+        <a href="https://github.com/Nikhil18Patil" target="_blank"><img src="{% static 'github.png' % }" alt="Github"></a>
+        <a href="https://www.linkedin.com/in/nikhil-patil-9a97971b5" target="_blank"><img src="{% static 'linkedin.png' % }" alt="Github"></a>
+       <a href="" target="_blank"><img src="{% static 'instagram.png' % }" alt="Github"></a>
+       <a href="" target="_blank"><img src=" {% static 'linkedin.png' % }" alt="Github"></a>
+      </div>
+
+    </div>
+
+  </div>
+
+  
+  <p class="last_p">© Copyright 2023. Made by Nikhil Patil</p>
+</div>
+
+
+</body>
+
+</html>
