@@ -7,7 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script  src="{%static 'js/index.js' %}" ></script>
-</head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+   <script>
+     // Initialize EmailJS with your user ID
+     emailjs.init("yKZDZuhyjlCk6nRdk");
+   
+     // Function to send the email
+     function sendEmail() {
+       const form = document.querySelector(".form form"); // Corrected the form selector
+       const name = form.name.value;
+       const email = form.email.value;
+       const message = form.message.value;
+   
+       // EmailJS API call to send the email
+       emailjs.send("service_a3dw6dn","template_a9m55lk", {
+         from_name: name,
+         from_email: email,
+         message: message
+       })
+       .then(function(response) {
+         console.log("Email sent:", response);
+         form.reset();
+         // Show a SweetAlert popup
+         Swal.fire({
+           icon: 'success',
+           title: 'Success',
+           text: 'Thank you for your message!',
+         });
+       }, function(error) {
+         console.log("Email error:", error);
+         // Show a SweetAlert error popup
+         Swal.fire({
+           icon: 'error',
+           title: 'Oops...',
+           text: 'Something went wrong!',
+         });
+       });
+   
+       // Prevent the form from submitting through traditional means
+       return false;
+     }
+   </script>
+   
+
+  </head>
 <body>
 <div class="nav-sec" >
     <nav class="navbar">
@@ -137,7 +184,7 @@
 
   <div class="form">
     <h1> Contact me </h1>
-    <form action="#home" method="">
+    <form onsubmit="return sendEmail();">
       <div class="row">
         <div class="col-md-6">
           <label for="name">Name</label>
